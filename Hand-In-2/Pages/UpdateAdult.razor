@@ -1,0 +1,211 @@
+﻿@page "/updateAdult"
+@using Hand_In_2.Data.Model
+@using Hand_In_2.Data.Model
+@using Hand_In_2.Data
+@using Hand_In_2.Data.Impl
+@using System.Globalization
+@inject IAdultsService AdultsService
+@inject NavigationManager NavigationManager
+@inject AppDataToUpdateAdult AppDataToUpdateAdult
+<h3>UpdateAdult</h3>
+<EditForm Model="@newAdult">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    <div class="form-group">
+        First Name <br/>
+        <InputText id="first-name" @bind-Value="newAdult.FirstName"/>
+        <p style="color: red">@firstNameError</p>
+    </div>
+    <div class="form-group">
+        Last Name <br/>
+        <InputText id="last-name" @bind-Value="newAdult.LastName"/>
+        <p style="color: red">@lastNameError</p>
+    </div>
+    <div class="form-group">
+        Hair Color <br/>
+        <select @bind="hairColor" class="form-control selectpicker" style="width: 300px">
+            <option selected disabled value="-1">Choose the hair color</option>
+            <option>blond</option>
+            <option>red</option>
+            <option>brown</option>
+            <option>black</option>
+            <option>white</option>
+            <option>grey</option>
+            <option>blue</option>
+            <option>green</option>
+            <option>leverpostej</option>
+        </select>
+    </div>
+    <div class="form-group">
+        Eye color <br/>
+        <select @bind="eyeColor" class="form-control selectpicker" style="width: 300px">
+            <option selected disabled value="-1">Choose the eye color</option>
+            <option>brown</option>
+            <option>grey</option>
+            <option>green</option>
+            <option>blue</option>
+            <option>amber</option>
+            <option>hazel</option>
+        </select>
+    </div>
+    <div class="form-group">
+        Age <br/>
+        <InputText id="age" @bind-Value="age"/>
+        <p style="color: red">@ageError</p>
+    </div>
+
+    <div class="form-group">
+        Weight <br/>
+        <InputText id="weight" @bind-Value="weight"/>
+        <p style="color: red">@weightError</p>
+    </div>
+    <div class="form-group">
+        Height <br/>
+        <InputText id="height" @bind-Value="height"/>
+        <p style="color: red">@heightError</p>
+    </div>
+    <div class="form-group">
+        Sex <br/>
+        <select @bind="newAdult.Sex" class="form-control selectpicker" style="width: 300px">
+            <option selected disabled value="-1">Choose the sex</option>
+            <option>"F"</option>
+            <option>"M"</option>
+        </select>
+        <p style="color: red">@sexError</p>
+    </div>
+    <div class="form-group">
+        Job title <br/>
+        <InputText id="job-title" @bind-Value="newAdult.JobTitle" style="width: 500px"/>
+        <p style="color: red">@jobTitleError</p>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-outline-dark" @onclick="UpdateAdultPerson">Change</button>
+    </div>
+    <p style="color: red">@theSameName</p>
+</EditForm>
+
+@code {
+    string age, weight, height, eyeColor, hairColor;
+    private string ageError, weightError, heightError, firstNameError, lastNameError, sexError, jobTitleError, theSameName;
+    private Adult newAdult = new Adult();
+    private ValidHairColor _validHairColor = new ValidHairColor();
+    private ValidEyeColor _validEyeColor = new ValidEyeColor();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Adult adult = AppDataToUpdateAdult.adult;
+        newAdult.FirstName = adult.FirstName;
+        newAdult.LastName = adult.LastName;
+        hairColor = adult.HairColor;
+        eyeColor = adult.EyeColor;
+        age = adult.Age.ToString();
+        weight = adult.Weight.ToString(CultureInfo.CurrentCulture);
+        height = adult.Height.ToString();
+        newAdult.Sex = adult.Sex;
+        newAdult.JobTitle = adult.JobTitle;
+    }
+
+    private void UpdateAdultPerson()
+    {
+        try
+        {
+            AdultsService.RemoveAdult(AppDataToUpdateAdult.adult.FirstName, AppDataToUpdateAdult.adult.LastName);
+            if (_validHairColor.IsValid(hairColor))
+            {
+                newAdult.HairColor = hairColor;
+            }
+            if (_validEyeColor.IsValid(eyeColor))
+            {
+                newAdult.EyeColor = eyeColor;
+            }
+
+            if (newAdult.FirstName == null)
+            {
+                firstNameError = "Input the first name";
+            }
+            else
+            {
+                firstNameError = "";
+            }
+            if (newAdult.LastName == null)
+            {
+                lastNameError = "Input the last name";
+            }
+            else
+            {
+                lastNameError = "";
+            }
+            bool isAgeOk = Int32.TryParse(age, out int resultAge);
+            if (!isAgeOk)
+            {
+                ageError = "Input the number for the age field";
+            }
+            else if (Int32.Parse(age) < 1)
+            {
+                ageError = "The age cannot be negative";
+            }
+            else
+            {
+                ageError = "";
+                newAdult.Age = resultAge;
+            }
+            bool isWeightOk = float.TryParse(weight, out float resultWeight);
+            if (!isWeightOk)
+            {
+                weightError = "Input the number for the weight field";
+            }
+            else
+            {
+                weightError = "";
+                newAdult.Weight = resultWeight;
+            }
+            bool isHeightOk = Int32.TryParse(height, out int resultHeight);
+            if (!isHeightOk)
+            {
+                heightError = "Input the number for the height field";
+            }
+            else
+            {
+                heightError = "";
+                newAdult.Height = resultHeight;
+            }
+
+            if (newAdult.Sex == null)
+            {
+                sexError = "Sex has to be F or M";
+            }
+            else
+            {
+                sexError = "";
+            }
+            if (newAdult.JobTitle == null)
+            {
+                jobTitleError = "Input job title";
+            }
+            else
+            {
+                jobTitleError = "";
+            }
+
+            if (isAgeOk && isHeightOk && isWeightOk && ageError == "" && weightError == "" && heightError == "" && firstNameError == "" && lastNameError == "" && sexError == "" && jobTitleError == "")
+            {
+                IList<Adult> adults = AdultsService.getAllAdults();
+                foreach (Adult adult in adults)
+                {
+                    if (adult.FirstName.Equals(newAdult.FirstName) && adult.LastName.Equals(newAdult.LastName))
+                    {
+                        theSameName = "The adult " + newAdult.FirstName + " " + newAdult.LastName + " already exists";
+                        return;
+                    }
+                }
+                newAdult.Id = AdultsService.getAllAdults().Count;
+                AdultsService.addAdult(newAdult);
+                NavigationManager.NavigateTo("/Adults");
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+        }
+    }
+}

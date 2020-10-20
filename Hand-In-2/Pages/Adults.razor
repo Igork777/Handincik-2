@@ -1,0 +1,107 @@
+﻿@page "/Adults"
+@using System.Security.Claims
+@using Hand_In_2.Data
+@using Hand_In_2.Data.Impl
+@using Hand_In_2.Data.Model
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject IAdultsService AdultsService
+@inject NavigationManager NavigationManager
+@inject AppDataToUpdateAdult AppDataToUpdateAdult
+<h3>Adults</h3>
+<p>
+    Filter by user First Name: <input type="text" @onchange="@((arg) => FilterByFirstName(arg))" style="width: 50px"/>
+</p>
+<p>
+    Filter by user Last Name: <input type="text" @onchange="@((arg) => FilterByLastName(arg))" style="width: 50px"/>
+</p>
+@* <p> *@
+@*    Input the : <input type="text" @LocationChangeException="@((arg) => FilterByMinAge(arg))"/> *@
+@* </p> *@
+<table class="table">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Hair color</th>
+        <th>Eye color</th>
+        <th>Age</th>
+        <th>Weight</th>
+        <th>Height</th>
+        <th>Sex</th>
+        <th>JobTitle</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in adults)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.HairColor</td>
+            <td>@item.EyeColor</td>
+            <td>@item.Age</td>
+            <td>@item.Weight</td>
+            <td>@item.Height</td>
+            <td>@item.Sex</td>
+            <td>@item.JobTitle</td>
+            <td>
+                <button @onclick="@(() => RemoveAdult(item.FirstName, item.LastName))">
+                    <i class="oi oi-trash" style="color: red"/>
+                </button>
+            </td>
+            <td>
+                <button @onclick="@(() => UpdateAdult(item.FirstName, item.LastName))">
+                    Update
+                </button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@code {
+    private IList<Adult> adults;
+    private string filterByFirstName, filterByLastName, age;
+    private ClaimsPrincipal _claimsPrincipal;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        _claimsPrincipal = authState.User;
+        adults = AdultsService.getAllAdults();
+    }
+
+    private void RemoveAdult(string firstName, string lastName)
+    {
+        adults = AdultsService.RemoveAdult(firstName, lastName);
+    }
+
+    private void UpdateAdult(string firstName, string lastName)
+    {
+        AppDataToUpdateAdult.adult = adults.First(t => t.FirstName.Equals(firstName) && t.LastName.Equals(lastName));
+        NavigationManager.NavigateTo("/updateAdult");
+    }
+
+    private void FilterByFirstName(ChangeEventArgs changeEventArgs)
+    {
+        filterByFirstName = changeEventArgs.Value.ToString();
+        ExecuteFilter();
+    }
+
+    private void ExecuteFilter()
+    {
+        adults = AdultsService.getAllAdults().Where((t => filterByFirstName != null && t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (filterByLastName != null && t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase)))).ToList();
+    }
+
+    private void FilterByLastName(ChangeEventArgs changeEventArgs)
+    {
+        filterByLastName = changeEventArgs.Value.ToString();
+        ExecuteFilter();
+    }
+
+    private void FilterByMinAge(object o)
+    {
+        throw new NotImplementedException();
+    }
+
+}

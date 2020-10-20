@@ -1,0 +1,38 @@
+﻿@using Hand_In_2.Data.Impl
+@inherits LayoutComponentBase
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject  NavigationManager NavigationManager
+<div class="sidebar">
+    <NavMenu/>
+</div>
+
+<div class="main">
+    <div class="top-row px-4">
+        <AuthorizeView>
+            <Authorized>
+                <p style="margin-right: 10px">Name: @context.User.Identity.Name</p>
+                <button @onclick="PerformLogout">Log Out</button>
+            </Authorized>
+        </AuthorizeView>
+    </div>
+
+    <div class="content px-4">
+        @Body
+    </div>
+</div>
+
+@code
+{
+    public async Task PerformLogout()
+    {
+        try
+        {
+            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+            NavigationManager.NavigateTo("/");
+        }
+        catch (Exception e)
+        {
+
+        }
+    }
+}
