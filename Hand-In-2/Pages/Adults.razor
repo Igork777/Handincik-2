@@ -9,14 +9,14 @@
 @inject AppDataToUpdateAdult AppDataToUpdateAdult
 <h3>Adults</h3>
 <p>
-    Filter by user First Name: <input type="text" @onchange="@((arg) => FilterByFirstName(arg))" style="width: 50px"/>
+    Filter by user First Name: <input type="text" @oninput="@((arg) => FilterByFirstName(arg))" style="width: 50px"/>
 </p>
 <p>
-    Filter by user Last Name: <input type="text" @onchange="@((arg) => FilterByLastName(arg))" style="width: 50px"/>
+    Filter by user Last Name: <input type="text" @oninput="@((arg) => FilterByLastName(arg))" style="width: 50px"/>
 </p>
-@* <p> *@
-@*    Input the : <input type="text" @LocationChangeException="@((arg) => FilterByMinAge(arg))"/> *@
-@* </p> *@
+<p>
+    Input min age : <input type="text" @oninput="@((arg) => FilteredByMinAge(arg))" style="width: 50px"/>
+</p>
 <table class="table">
     <thead>
     <tr>
@@ -61,7 +61,7 @@
 
 @code {
     private IList<Adult> adults;
-    private string filterByFirstName, filterByLastName, age;
+    private string filterByFirstName = "", filterByLastName = "", filterByMinaAge = "";
     private ClaimsPrincipal _claimsPrincipal;
 
     protected override async Task OnInitializedAsync()
@@ -90,7 +90,15 @@
 
     private void ExecuteFilter()
     {
-        adults = AdultsService.getAllAdults().Where((t => filterByFirstName != null && t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (filterByLastName != null && t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase)))).ToList();
+
+        if (int.TryParse(filterByMinaAge, out int i))
+        {
+            adults = AdultsService.getAllAdults().Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase) && (t.Age >= Int32.Parse(filterByMinaAge))))).ToList();
+        }
+        else
+        {
+            adults = AdultsService.getAllAdults().Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase)))).ToList();
+        }
     }
 
     private void FilterByLastName(ChangeEventArgs changeEventArgs)
@@ -98,10 +106,12 @@
         filterByLastName = changeEventArgs.Value.ToString();
         ExecuteFilter();
     }
+    
 
-    private void FilterByMinAge(object o)
+    private void FilteredByMinAge(ChangeEventArgs changeEventArgs)
     {
-        throw new NotImplementedException();
+        filterByMinaAge = changeEventArgs.Value.ToString();   
+        ExecuteFilter();
     }
 
 }
