@@ -39,7 +39,7 @@ namespace Hand_In_2.Data.Persistance
             PropertyInfo propertyInfo = typeParameterType.GetProperty("Path");
             if (propertyInfo == null)
             {
-                throw new RuntimeWrappedException("Fuck you");
+                throw new RuntimeWrappedException("Exception, can't be null");
             }
 
             object obj = propertyInfo.GetValue(instance, null);
