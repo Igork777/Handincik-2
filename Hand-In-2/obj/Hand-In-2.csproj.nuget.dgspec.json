@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\Hand-In-2.csproj": {}
+    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj": {}
   },
   "projects": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\Hand-In-2.csproj": {
+    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\Hand-In-2.csproj",
+        "projectUniqueName": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj",
         "projectName": "Hand-In-2",
-        "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\Hand-In-2.csproj",
+        "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj",
         "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\obj\\",
+        "outputPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config"

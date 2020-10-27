@@ -9,18 +9,19 @@ namespace Hand_In_2.Data.Impl
 {
     public class AdultService : IAdultsService
     {
-        private ISaveData IsaveData;
+        private IReadAndWriteData<Adult> _readAndWriteData;
         private IList<Adult> adults;
 
-        public AdultService()
+      
+        public AdultService(IReadAndWriteData<Adult> readAndWriteData)
         {
-            IsaveData = new FileContext();
-            adults = IsaveData.ReadData<Adult>(enums.adults);
+            _readAndWriteData = readAndWriteData;
+            adults = _readAndWriteData.ReadData();
         }
 
         public IList<Adult> getAllAdults()
         {
-            return IsaveData.ReadData<Adult>(enums.adults);
+            return _readAndWriteData.ReadData();
         }
 
         public void addAdult(Adult adult)
@@ -32,7 +33,7 @@ namespace Hand_In_2.Data.Impl
         private void saveChanges(out string json)
         {
             json = JsonSerializer.Serialize(adults);
-            IsaveData.SaveChanges(enums.adults, json);
+            _readAndWriteData.SaveChanges(json);
         }
 
         public IList<Adult> RemoveAdult(string firstName, string lastName)

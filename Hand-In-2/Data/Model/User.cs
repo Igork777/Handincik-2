@@ -2,6 +2,13 @@
 {
     public class User
     {
+        public string Path { get; set; }
+
+        public User()
+        {
+            Path = "users.json";
+        }
+
         public int UserId { get; set; }
         
         public string UserName { get; set; }

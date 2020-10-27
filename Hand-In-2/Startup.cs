@@ -1,3 +1,4 @@
+using Exercise1.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Hand_In_2.Data;
 using Hand_In_2.Data.Impl;
+using Hand_In_2.Data.Model;
+using Hand_In_2.Data.Persistance;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Hand_In_2
@@ -25,10 +28,12 @@ namespace Hand_In_2
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<AppDataToUpdateAdult>();
-            services.AddScoped<IUserService, InMemoryUserService>();
-            services.AddScoped<IAdultsService, AdultService>();
+            services.AddScoped<Adult>();
+            services.AddScoped<User>();
+            services.AddScoped<IUserService, InMemoryUserService>(serviceProvider => new InMemoryUserService(new ReadAndWriteData<User>()));
+            services.AddScoped<IAdultsService, AdultService>(serviceProvider => new AdultService(new ReadAndWriteData<Adult>()));
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

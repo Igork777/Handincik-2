@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -11,20 +10,20 @@ namespace Hand_In_2.Data.Impl
 {
     public class InMemoryUserService : IUserService
     {
-        private ISaveData _fileContext;
+        private IReadAndWriteData<User> _readAndWriteData;
         private IList<User> users;
 
-        public InMemoryUserService()
+        public InMemoryUserService(IReadAndWriteData<User> readAndWriteData)
         {
-            _fileContext = new FileContext();
-            users = _fileContext.ReadData<User>(enums.users);
+            _readAndWriteData = readAndWriteData;
+            users = _readAndWriteData.ReadData();
         }
 
         private void WriteToFile()
         {
             string json = JsonSerializer.Serialize(users);
-            _fileContext.SaveChanges(enums.users, json);
-            users = _fileContext.ReadData<User>(enums.users);
+            _readAndWriteData.SaveChanges(json);
+            users = _readAndWriteData.ReadData();
         }
 
         public User LogInUser(string userName, string password)
