@@ -27,12 +27,11 @@ namespace Hand_In_2.Data.Persistance
         
         public IList<T> ReadData()
         {
-            var obj = getName();
-            string content = File.ReadAllText(obj.ToString());
+            string content = File.ReadAllText(pathToFile);
             return JsonSerializer.Deserialize<List<T>>(content);
         }
 
-        private static object getName()
+        private object getName()
         {
             Type typeParameterType = typeof(T);
             object instance = Activator.CreateInstance(typeParameterType);
@@ -44,13 +43,12 @@ namespace Hand_In_2.Data.Persistance
 
             object obj = propertyInfo.GetValue(instance, null);
            
-            return instance;
+            return obj.ToString();
         }
 
         public void SaveChanges(string json)
         {
-            var obj = getName();
-            File.WriteAllText(obj.ToString(),json);
+            File.WriteAllText(pathToFile,json);
         }
     }
 }

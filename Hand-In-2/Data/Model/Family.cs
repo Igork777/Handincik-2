@@ -5,6 +5,8 @@ namespace Hand_In_2.Data.Model
 {
     public class Family
     {
+        public string Path { get; set; }
+        
         //public int Id { get; set; }
         [Required]
         public string StreetName { get; set; }
@@ -15,7 +17,8 @@ namespace Hand_In_2.Data.Model
         public List<Pet> Pets{ get; set; }
 
         public Family() {
-            Adults = new List<Adult>();     
+            Adults = new List<Adult>();
+            Path = "families.json";
         }
 
     }

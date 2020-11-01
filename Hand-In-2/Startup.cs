@@ -25,11 +25,10 @@ namespace Hand_In_2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<AppDataToUpdateAdult>();
-            services.AddScoped<Adult>();
-            services.AddScoped<User>();
             services.AddScoped<IUserService, InMemoryUserService>(serviceProvider => new InMemoryUserService(new ReadAndWriteData<User>()));
             services.AddScoped<IAdultsService, AdultService>(serviceProvider => new AdultService(new ReadAndWriteData<Adult>()));
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();

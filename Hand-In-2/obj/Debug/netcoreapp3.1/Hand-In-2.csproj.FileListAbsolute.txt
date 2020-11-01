@@ -82,7 +82,6 @@ D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcore
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\AddAdults.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Adults.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Error.razor.g.cs
-D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Families.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Login.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Registration.razor.g.cs
@@ -99,7 +98,6 @@ D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcore
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\AddAdults.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Adults.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Error.razor.g.cs
-D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Families.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Login.razor.g.cs
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Razor\Pages\Registration.razor.g.cs

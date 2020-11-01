@@ -1,5 +1,4 @@
 ﻿@page "/Adults"
-@using System.Security.Claims
 @using Hand_In_2.Data
 @using Hand_In_2.Data.Impl
 @using Hand_In_2.Data.Model
@@ -62,12 +61,9 @@
 @code {
     private IList<Adult> adults;
     private string filterByFirstName = "", filterByLastName = "", filterByMinaAge = "";
-    private ClaimsPrincipal _claimsPrincipal;
 
     protected override async Task OnInitializedAsync()
     {
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        _claimsPrincipal = authState.User;
         adults = AdultsService.getAllAdults();
     }
 
