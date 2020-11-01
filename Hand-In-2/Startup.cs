@@ -1,3 +1,5 @@
+using System;
+using Exercise1.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Hand_In_2.Data;
 using Hand_In_2.Data.Impl;
+using Hand_In_2.Data.Model;
+using Hand_In_2.Data.Persistance;
 using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Hand_In_2
@@ -22,13 +26,14 @@ namespace Hand_In_2
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+     
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddHttpClient<IUserService, UserService>(client => client.BaseAddress = new Uri("https://localhost:5003/"));
+            services.AddHttpClient<IAdultsService, AdultService>(client => client.BaseAddress = new Uri("https://localhost:5003/"));
             services.AddSingleton<AppDataToUpdateAdult>();
-            services.AddScoped<IUserService, InMemoryUserService>();
-            services.AddScoped<IAdultsService, AdultService>();
             services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

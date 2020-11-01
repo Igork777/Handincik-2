@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "dbspdtCSHH86ib+8c5KXVNyAkstT+sK6uXnfVCwJ9dPkRYaFFjY7OI5wme8fGUzq4X7f2SNDsCWaJ9+GK0mb5Q==",
+  "dgSpecHash": "DP8oer/q+Qh+7B07k75d/hLBxh9M+HzI1o4pVGQs7j2ZmSV51ajglVS/VSB77+ruXw+G3TKQ/QamGEfYWL8QLg==",
   "success": true,
-  "projectFilePath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Hand-In-2\\Hand-In-2\\Hand-In-2.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Igor\\.nuget\\packages\\microsoft.aspnetcore.blazor.httpclient\\3.2.0-preview3.20168.3\\microsoft.aspnetcore.blazor.httpclient.3.2.0-preview3.20168.3.nupkg.sha512",
+    "C:\\Users\\Igor\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Igor\\.nuget\\packages\\system.text.json\\4.7.1\\system.text.json.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }

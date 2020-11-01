@@ -105,11 +105,11 @@
         newAdult.JobTitle = adult.JobTitle;
     }
 
-    private void UpdateAdultPerson()
+    private async Task UpdateAdultPerson()
     {
         try
         {
-            AdultsService.RemoveAdult(AppDataToUpdateAdult.adult.FirstName, AppDataToUpdateAdult.adult.LastName);
+            await AdultsService.removeAdult(AppDataToUpdateAdult.adult.FirstName, AppDataToUpdateAdult.adult.LastName);
             if (_validHairColor.IsValid(hairColor))
             {
                 newAdult.HairColor = hairColor;
@@ -189,7 +189,7 @@
 
             if (isAgeOk && isHeightOk && isWeightOk && ageError == "" && weightError == "" && heightError == "" && firstNameError == "" && lastNameError == "" && sexError == "" && jobTitleError == "")
             {
-                IList<Adult> adults = AdultsService.getAllAdults();
+                IList<Adult> adults = await AdultsService.getAllAdults();
                 foreach (Adult adult in adults)
                 {
                     if (adult.FirstName.Equals(newAdult.FirstName) && adult.LastName.Equals(newAdult.LastName))
@@ -198,8 +198,10 @@
                         return;
                     }
                 }
-                newAdult.Id = AdultsService.getAllAdults().Count;
-                AdultsService.addAdult(newAdult);
+                adults = await AdultsService.getAllAdults();
+                
+                newAdult.Id = adults.Count;
+               await AdultsService.addAdult(newAdult);
                 NavigationManager.NavigateTo("/Adults");
             }
         }

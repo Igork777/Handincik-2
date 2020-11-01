@@ -72,23 +72,50 @@
     </div>
     <div class="form-group">
         Job title <br/>
-        <InputText id="job-title" @bind-Value="newAdult.JobTitle" style="width: 500px"/>
-        <p style="color: red">@jobTitleError</p>
+        <select @bind="newAdult.JobTitle" class="form-control selectpicker" style="width: 300px">
+            <option selected disabled value="-1">Choose the eye job</option>
+            <option>Teacher</option>
+            <option>Engineering</option>
+            <option>Garbage Collector</option>
+            <option>Shepherd</option>
+            <option>Pilot</option>
+            <option>Police Officer</option>
+            <option>Pirate</option>
+            <option>Fireman</option>
+            <option>Astronaut</option>
+            <option>Captain</option>
+            <option>Solider</option>
+            <option>Pizza Chef</option>
+            <option>Chef</option>
+            <option>Janitor</option>
+            <option>Factory Worker</option>
+            <option>Chauffeur</option>
+            <option>Waitress</option>
+            <option>Ninja</option>
+            <option>Doctor</option>
+            <option>Nurse</option>
+            <option>Chemist</option>
+            <option>Caretaker</option>
+            <option>Gardener</option>
+            <option>Mascot</option>
+            <option>Athlete</option>
+        </select>
     </div>
     <div class="form-group">
         <button class="btn btn-outline-dark" @onclick="AddNewAdult">Add</button>
     </div>
-      <p style="color: red">@theSameName</p>
+    <p style="color: red">@theSameName</p>
 </EditForm>
 
 @code {
     string age, weight, height, eyeColor, hairColor;
-    private string ageError, weightError, heightError, firstNameError, lastNameError, sexError, jobTitleError, theSameName;
+    private string ageError, weightError, heightError, firstNameError, lastNameError, sexError, theSameName;
     private Adult newAdult = new Adult();
     private ValidHairColor _validHairColor = new ValidHairColor();
     private ValidEyeColor _validEyeColor = new ValidEyeColor();
+    private IList<Adult> _adults;
 
-    private void AddNewAdult()
+    private async Task AddNewAdult()
     {
         try
         {
@@ -100,7 +127,8 @@
             {
                 newAdult.EyeColor = eyeColor;
             }
-            newAdult.Id = AdultsService.getAllAdults().Count;
+            _adults = await AdultsService.getAllAdults();
+            newAdult.Id = _adults.Count;
             if (newAdult.FirstName == null)
             {
                 firstNameError = "Input the first name";
@@ -162,17 +190,13 @@
             }
             if (newAdult.JobTitle == null)
             {
-                jobTitleError = "Input job title";
+                newAdult.JobTitle = "Not working";
             }
-            else
+
+            if (isAgeOk && isHeightOk && isWeightOk && ageError == "" && weightError == "" && heightError == "" && firstNameError == "" && lastNameError == "" && sexError == "")
             {
-                jobTitleError = "";
-            }
-            
-            if (isAgeOk && isHeightOk && isWeightOk && ageError == "" && weightError == "" && heightError == "" && firstNameError == "" && lastNameError == "" && sexError == "" && jobTitleError == "")
-            {
-                IList<Adult> adults = AdultsService.getAllAdults();
-                foreach (Adult adult in adults)
+                _adults = await AdultsService.getAllAdults();
+                foreach (Adult adult in _adults)
                 {
                     if (adult.FirstName.Equals(newAdult.FirstName) && adult.LastName.Equals(newAdult.LastName))
                     {

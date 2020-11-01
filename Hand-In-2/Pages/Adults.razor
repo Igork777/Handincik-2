@@ -1,9 +1,7 @@
 ﻿@page "/Adults"
-@using System.Security.Claims
 @using Hand_In_2.Data
 @using Hand_In_2.Data.Impl
 @using Hand_In_2.Data.Model
-@inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IAdultsService AdultsService
 @inject NavigationManager NavigationManager
 @inject AppDataToUpdateAdult AppDataToUpdateAdult
@@ -60,58 +58,70 @@
 </table>
 
 @code {
-    private IList<Adult> adults;
+    private IList<Adult> adults = new List<Adult>();
     private string filterByFirstName = "", filterByLastName = "", filterByMinaAge = "";
-    private ClaimsPrincipal _claimsPrincipal;
 
     protected override async Task OnInitializedAsync()
     {
-        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
-        _claimsPrincipal = authState.User;
-        adults = AdultsService.getAllAdults();
+        try
+        {
+            adults = await AdultsService.getAllAdults();
+            
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Shit happened here");
+        }
+       
     }
 
-    private void RemoveAdult(string firstName, string lastName)
+    private async Task RemoveAdult(string firstName, string lastName)
     {
-        adults = AdultsService.RemoveAdult(firstName, lastName);
+      
+        await AdultsService.removeAdult(firstName, lastName);
+        adults = await AdultsService.getAllAdults();
     }
 
-    private void UpdateAdult(string firstName, string lastName)
+    private async Task UpdateAdult(string firstName, string lastName)
     {
         AppDataToUpdateAdult.adult = adults.First(t => t.FirstName.Equals(firstName) && t.LastName.Equals(lastName));
         NavigationManager.NavigateTo("/updateAdult");
     }
 
-    private void FilterByFirstName(ChangeEventArgs changeEventArgs)
+    private async Task FilterByFirstName(ChangeEventArgs changeEventArgs)
     {
         filterByFirstName = changeEventArgs.Value.ToString();
-        ExecuteFilter();
+        await ExecuteFilter();
     }
 
-    private void ExecuteFilter()
+    private async Task ExecuteFilter()
     {
 
         if (int.TryParse(filterByMinaAge, out int i))
         {
-            adults = AdultsService.getAllAdults().Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase) && (t.Age >= Int32.Parse(filterByMinaAge))))).ToList();
+            IList<Adult> all = await AdultsService.getAllAdults();
+            adults = all.Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase) && (t.Age >= Int32.Parse(filterByMinaAge))))).ToList();
         }
+        
         else
         {
-            adults = AdultsService.getAllAdults().Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase)))).ToList();
+            IList<Adult> all = await AdultsService.getAllAdults();
+            adults = all.Where((t => t.FirstName.StartsWith(filterByFirstName, StringComparison.OrdinalIgnoreCase) && (t.LastName.StartsWith(filterByLastName, StringComparison.OrdinalIgnoreCase)))).ToList();
+
         }
     }
 
-    private void FilterByLastName(ChangeEventArgs changeEventArgs)
+    private async Task FilterByLastName(ChangeEventArgs changeEventArgs)
     {
         filterByLastName = changeEventArgs.Value.ToString();
-        ExecuteFilter();
+        await ExecuteFilter();
     }
     
 
-    private void FilteredByMinAge(ChangeEventArgs changeEventArgs)
+    private async Task FilteredByMinAge(ChangeEventArgs changeEventArgs)
     {
         filterByMinaAge = changeEventArgs.Value.ToString();   
-        ExecuteFilter();
+       await ExecuteFilter();
     }
 
 }
