@@ -118,3 +118,10 @@ D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcore
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Hand-In-2.pdb
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Hand-In-2.genruntimeconfig.cache
 D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Hand-In-2.csproj.CopyComplete
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\REST-API.exe
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\REST-API.dll
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\REST-API.pdb
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\obj\Debug\netcoreapp3.1\Hand-In-2.MvcApplicationPartsAssemblyInfo.cs
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Blazor.HttpClient.dll
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+D:\C#\DNP\AuthenticationAndAuthorization\Handincik-2\Hand-In-2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll

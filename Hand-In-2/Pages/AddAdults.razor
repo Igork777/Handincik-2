@@ -113,8 +113,9 @@
     private Adult newAdult = new Adult();
     private ValidHairColor _validHairColor = new ValidHairColor();
     private ValidEyeColor _validEyeColor = new ValidEyeColor();
+    private IList<Adult> _adults;
 
-    private void AddNewAdult()
+    private async Task AddNewAdult()
     {
         try
         {
@@ -126,7 +127,8 @@
             {
                 newAdult.EyeColor = eyeColor;
             }
-            newAdult.Id = AdultsService.getAllAdults().Count;
+            _adults = await AdultsService.getAllAdults();
+            newAdult.Id = _adults.Count;
             if (newAdult.FirstName == null)
             {
                 firstNameError = "Input the first name";
@@ -193,8 +195,8 @@
 
             if (isAgeOk && isHeightOk && isWeightOk && ageError == "" && weightError == "" && heightError == "" && firstNameError == "" && lastNameError == "" && sexError == "")
             {
-                IList<Adult> adults = AdultsService.getAllAdults();
-                foreach (Adult adult in adults)
+                _adults = await AdultsService.getAllAdults();
+                foreach (Adult adult in _adults)
                 {
                     if (adult.FirstName.Equals(newAdult.FirstName) && adult.LastName.Equals(newAdult.LastName))
                     {

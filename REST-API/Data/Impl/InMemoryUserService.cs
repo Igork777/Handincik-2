@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Exercise1.Models;
 using Hand_In_2.Data.Persistance;
 
@@ -26,7 +27,7 @@ namespace Hand_In_2.Data.Impl
             users = _readAndWriteData.ReadData();
         }
 
-        public User LogInUser(string userName, string password)
+        public async Task<User> LogInUser(string userName, string password)
         {
             User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
             if (first == null)
@@ -42,28 +43,27 @@ namespace Hand_In_2.Data.Impl
             return first;
         }
 
-        public User RegisterUser(string userName, string city, string password)
+        public async Task<User> RegisterUser(User user)
         {
             Regex userNameAndCityRegex = new Regex(@"^[a-zA-Z ]+$"),
                 passwordRegex = new Regex(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
 
-            if (!userNameAndCityRegex.IsMatch(userName))
+            if (!userNameAndCityRegex.IsMatch(user.UserName))
             {
                 throw new Exception("Username should contain only latin letters or spaces. Registration failed");
             }
 
-            if (!userNameAndCityRegex.IsMatch(city))
+            if (!userNameAndCityRegex.IsMatch(user.City))
             {
                 throw new Exception("City should contain only latin letters or spaces. Registration failed");
             }
 
-            if (!passwordRegex.IsMatch(password))
+            if (!passwordRegex.IsMatch(user.Password))
             {
                 throw new Exception(
                     "The password must be at least 8 characters, at least one letter, one number and one special character. Registration failed");
             }
-
-            User user = new User {UserName = userName, City = city, Password = password};
+            
             if (users == null)
             {
                 users = new List<User>();

@@ -2,9 +2,9 @@
 {
     public class User
     {
-        public string Path { get; set; }
+        public static string Path { get; set; }
 
-        public User()
+        static User()
         {
             Path = "users.json";
         }

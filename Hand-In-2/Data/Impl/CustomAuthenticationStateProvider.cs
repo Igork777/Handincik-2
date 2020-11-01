@@ -40,7 +40,7 @@ namespace Hand_In_2.Data.Impl
             ClaimsPrincipal cachedClaimsPrincipal = new ClaimsPrincipal(identity);
             return await Task.FromResult(new AuthenticationState(cachedClaimsPrincipal));
         }
-        public void ValidateRegistration(string username, string city, string password)
+        public async Task ValidateRegistration(string username, string city, string password)
         {
             Console.WriteLine("Validating registration");
             if(string.IsNullOrEmpty(username)) throw new Exception("Enter username");
@@ -49,15 +49,15 @@ namespace Hand_In_2.Data.Impl
 
             try
             {
-                User user = _userService.RegisterUser(username, city,password);
+                User user = await _userService.RegisterUser(username, city,password);
                 NotifyAboutChange(user);
             }
             catch (Exception e)
             {
-                throw;
+                throw new Exception("Cannot create a user");
             }
         }
-        public void ValidateLogin(string username, string password)
+        public async Task ValidateLogin(string username, string password)
         {
             Console.WriteLine("Validating log in");
             if(string.IsNullOrEmpty(username)) throw new Exception("Enter username");
@@ -65,16 +65,16 @@ namespace Hand_In_2.Data.Impl
             
             try
             {
-                User user = _userService.LogInUser(username, password);
-               NotifyAboutChange(user);
+                User user  = await _userService.LogInUser(username, password);
+                NotifyAboutChange(user);
             }
             catch (Exception e)
             {
-                throw;
+                throw new Exception("No such user in the system");
             }
         }
 
-        private void NotifyAboutChange(User user)
+        public void NotifyAboutChange(User user)
         {
             ClaimsIdentity identity = new ClaimsIdentity();
             identity = SetupClaimsForUser(user);

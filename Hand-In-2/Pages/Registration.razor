@@ -39,7 +39,7 @@
         _errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateRegistration(_username, _city, _password);
+            await ((CustomAuthenticationStateProvider) AuthenticationStateProvider).ValidateRegistration(_username, _city, _password);
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

@@ -4,6 +4,7 @@
 @namespace Exercise1.Pages
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager NavigationManager
+@inject IUserService UserService
 
 <AuthorizeView>
     
@@ -35,7 +36,7 @@
         _errorMessage = "";
         try
         {
-            ((CustomAuthenticationStateProvider)AuthenticationStateProvider).ValidateLogin(_username, _password);
+            await ((CustomAuthenticationStateProvider)AuthenticationStateProvider).ValidateLogin(_username, _password);
             _username = "";
             _password = "";
             NavigationManager.NavigateTo("/");

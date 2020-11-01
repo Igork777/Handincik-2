@@ -3,10 +3,10 @@
 namespace Hand_In_2.Data.Model
 {
     public class Adult : Person {
-        public string Path { get; set; }
+        public static string Path { get; set; }
         public string JobTitle { get; set; }
 
-        public Adult()
+        static Adult()
         {
             Path = "adults.json";
         }
