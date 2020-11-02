@@ -32,7 +32,6 @@ namespace REST_API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<AppDataToUpdateAdult>();
             services.AddScoped<IUserService, InMemoryUserService>(serviceProvider => new InMemoryUserService(new ReadAndWriteData<User>()));
             services.AddScoped<IAdultsService, AdultService>(serviceProvider => new AdultService(new ReadAndWriteData<Adult>()));
         }
