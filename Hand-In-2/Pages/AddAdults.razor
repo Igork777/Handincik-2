@@ -204,7 +204,7 @@
                         return;
                     }
                 }
-                AdultsService.addAdult(newAdult);
+              await AdultsService.addAdult(newAdult);
                 NavigationManager.NavigateTo("/Adults");
             }
         }
