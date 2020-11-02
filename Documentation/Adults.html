@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web aPI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Adults Web API Documentation</h1>
+<h2>Adult</h2>
+<p>The Adult is sent back and forth as json.<br> The json format is seen in the example below:
+    <br>
+    {
+    <br>
+    "JobTitle": "Tutor",
+    <br>
+    "ID": 0,
+    <br>
+    "FirstName": "Aryan",
+    <br>
+    "LastName": "Gifford",
+    <br>
+    "HairColor": "Black",
+    <br>
+    "EyeColor": "Brown",
+    <br>
+    "Age": 56,
+    <br>
+    "Weight": 99.2,
+    <br>
+    "Height": 172,
+    <br>
+    "Sex": "M"
+    <br>
+    }
+
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>API Request</th>
+        <th>Description</th>
+        <th>Exceptions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Get <br>
+        </td>
+        <td>The request will return an array of Adults<br>
+            Example:
+            .../Adults
+        </td>
+        <td>No exception can occur</td>
+    </tr>
+    <tr>
+        <td>Post</td>
+        <td>The request will add a new user to the system if such doesn't exist <br>
+            Example:
+            .../Adults/{json Adult object}
+        </td>
+        <td>
+            Internal exception 500 can occur if such adult already exists
+        </td>
+    </tr>
+    <tr>
+        <td>Delete</td>
+        <td>The request delete a user if such user exists<br>
+            Example:
+            .../Adults/?firstname={firstname}&lastname={lastname}
+        </td>
+        <td>Internal exception 500 if no such adult can be deleted</td>
+    </tr>
+    </tbody>
+</table>
+
+<h1>User</h1>
+<p>The User is sen back and forth as json. User is used for loggining in system.</p>
+<table>
+    <thead>
+    <tr>
+        <th>API Request</th>
+        <th>Description</th>
+        <th>Exceptions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Get</td>
+        <td>The request will return the corresponding User object based on the inputted username and password<br>
+        Example:
+        ...Users/?username={username}&password={password}</td>
+        <td>Internal exception 500 if there is no user with corresponding username and password</td>
+    </tr>
+    <tr>
+        <td>Post</td>
+        <td>The request will add new User, specifying firstname and lastname <br>
+        Example:
+        ...Users/{json object User}
+        </td>
+        <td>Internal exception 500 if there is a user with such credentials already exist</td>
+    </tr>
+    </tbody>
+
+</table>
+
+</body>
+</html>
