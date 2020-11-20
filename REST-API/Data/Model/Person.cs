@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
@@ -7,15 +8,17 @@ namespace Hand_In_2.Data.Model
 {
     public class Person
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [NotNull] public string FirstName { get; set; }
-        [NotNull] public string LastName { get; set; }
-        [ValidHairColor] public string HairColor { get; set; }
-        [NotNull] [ValidEyeColor] public string EyeColor { get; set; }
-        [NotNull, Range(0, 125)] public int Age { get; set; }
-        [NotNull, Range(1, 250)] public float Weight { get; set; }
-        [NotNull, Range(30, 250)] public int Height { get; set; }
-        [NotNull] public string Sex { get; set; }
+        [NotNull, Required] public string FirstName { get; set; }
+        [NotNull, Required] public string LastName { get; set; }
+        [ValidHairColor, Required] public string HairColor { get; set; }
+        [NotNull, Required] [ValidEyeColor] public string EyeColor { get; set; }
+        [NotNull, Range(0, 125), Required] public int Age { get; set; }
+        [NotNull, Range(1, 250), Required] public float Weight { get; set; }
+        [NotNull, Range(30, 250), Required] public int Height { get; set; }
+        [NotNull, Required] public string Sex { get; set; }
 
         public void Update(Person toUpdate)
         {
