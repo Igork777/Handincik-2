@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OUCn1nPnnk/GTfTcsQvf1eJ/P0zjJjW552b0/AnczABwPdFyBxObugIJMj/+aUGQamyKRftLxtdqwmkpRJgYcQ==",
+  "dgSpecHash": "ahV9TiPX3YF/RB5yXIv8QjgtWp1E4T46v2MFIPm4IsAMk7VFKUIcn35wuS2rdcTmgVUTucpA/q5XucsjPaXYPg==",
   "success": true,
-  "projectFilePath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj",
+  "projectFilePath": "D:\\Handincik-4\\REST-API\\REST-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Igor\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Igor\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

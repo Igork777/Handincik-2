@@ -23,11 +23,11 @@
 
 @code
 {
-    public async Task PerformLogout()
+    public void  PerformLogout()
     {
         try
         {
-            ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
+          ((CustomAuthenticationStateProvider) AuthenticationStateProvider).Logout();
             NavigationManager.NavigateTo("/");
         }
         catch (Exception e)

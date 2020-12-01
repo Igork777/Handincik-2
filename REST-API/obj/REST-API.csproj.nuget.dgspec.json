@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj": {}
+    "D:\\Handincik-4\\REST-API\\REST-API.csproj": {}
   },
   "projects": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj": {
+    "D:\\Handincik-4\\REST-API\\REST-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj",
+        "projectUniqueName": "D:\\Handincik-4\\REST-API\\REST-API.csproj",
         "projectName": "REST-API",
-        "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj",
+        "projectPath": "D:\\Handincik-4\\REST-API\\REST-API.csproj",
         "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\obj\\",
+        "outputPath": "D:\\Handincik-4\\REST-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config"
