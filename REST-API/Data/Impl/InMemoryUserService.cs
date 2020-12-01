@@ -11,25 +11,19 @@ namespace Hand_In_2.Data.Impl
 {
     public class InMemoryUserService : IUserService
     {
-        private IReadAndWriteData<User> _readAndWriteData;
-        private IList<User> users;
+        private UnitOfWork _unitOfWork;
 
-        public InMemoryUserService(IReadAndWriteData<User> readAndWriteData)
+        public InMemoryUserService(UnitOfWork unitOfWork)
         {
-            _readAndWriteData = readAndWriteData;
-            users = _readAndWriteData.ReadData();
+            _unitOfWork = unitOfWork;
         }
 
-        private void WriteToFile()
-        {
-            string json = JsonSerializer.Serialize(users);
-            _readAndWriteData.SaveChanges(json);
-            users = _readAndWriteData.ReadData();
-        }
+     
 
         public async Task<User> LogInUser(string userName, string password)
         {
-            User first = users.FirstOrDefault(user => user.UserName.Equals(userName));
+            User first = _unitOfWork.UserRepo.logInUser(userName, password);
+            _unitOfWork.Save();
             if (first == null)
             {
                 throw new Exception("User not found");
@@ -64,22 +58,17 @@ namespace Hand_In_2.Data.Impl
                     "The password must be at least 8 characters, at least one letter, one number and one special character. Registration failed");
             }
             
-            if (users == null)
-            {
-                users = new List<User>();
-                user.UserId = 0;
-            }
-            else if (users.FirstOrDefault(x => x.UserName.Equals(user.UserName)) != null)
+           
+
+            IList<User> users = _unitOfWork.UserRepo.getAllUsers();
+            _unitOfWork.Save();
+             if (users.FirstOrDefault(x => x.UserName.Equals(user.UserName)) != null)
             {
                 throw new Exception("User " + user.UserName + " already exists");
             }
-            else
-            {
-                user.UserId = users.Count;
-            }
 
-            users.Add(user);
-            WriteToFile();
+             _unitOfWork.UserRepo.RegisterUser(user);
+             _unitOfWork.Save();
             return user;
         }
     }

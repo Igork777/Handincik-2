@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj": {}
+    "D:\\Handincik-4\\REST-API\\REST-API.csproj": {}
   },
   "projects": {
-    "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj": {
+    "D:\\Handincik-4\\REST-API\\REST-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj",
+        "projectUniqueName": "D:\\Handincik-4\\REST-API\\REST-API.csproj",
         "projectName": "REST-API",
-        "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj",
+        "projectPath": "D:\\Handincik-4\\REST-API\\REST-API.csproj",
         "packagesPath": "C:\\Users\\Igor\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\obj\\",
+        "outputPath": "D:\\Handincik-4\\REST-API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Igor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,22 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\Igor\\.dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

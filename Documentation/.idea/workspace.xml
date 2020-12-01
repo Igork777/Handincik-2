@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f697365-1ed3-4399-a324-f1e02fada62a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/Hand-In-2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/REST-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/REST-API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/REST-API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/REST-API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/adults.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/adults.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/families.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/bin/Debug/netcoreapp3.1/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Hand-In-2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Pages/AddAdults.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Pages/AddAdults.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Pages/UpdateAdult.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Pages/UpdateAdult.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/Razor/Shared/NavMenu.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Hand-In-2.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Hand-In-2.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Hand-In-2.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Hand-In-2.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddAdults.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/AddAdults.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/UpdateAdult.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/UpdateAdult.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Debug/netcoreapp3.1/RazorDeclaration/Shared/NavMenu.razor.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/Hand-In-2.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/Hand-In-2.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hand-In-2/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../Hand-In-2/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HandIn 2-3 DNP.asta.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/adults.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/adults.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/REST-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/REST-API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/REST-API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/REST-API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/adults.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/adults.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/bin/Debug/netcoreapp3.1/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/Debug/netcoreapp3.1/REST-API.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/REST-API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/REST-API.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../REST-API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../REST-API/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1jjpdmuWNrYhlFaS8xnzFfn1x14" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f697365-1ed3-4399-a324-f1e02fada62a" name="Default Changelist" comment="" />
+      <created>1604327444605</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604327444605</updated>
+      <workItem from="1604327445697" duration="5291000" />
+      <workItem from="1604767428924" duration="599000" />
+      <workItem from="1605434903520" duration="432000" />
+      <workItem from="1605435350479" duration="193000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1605435542111">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1605435542111" />
+  </component>
+</project>

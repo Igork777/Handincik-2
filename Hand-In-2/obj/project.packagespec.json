@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj",
+    "projectUniqueName": "D:\\Handincik-4\\Hand-In-2\\Hand-In-2.csproj",
     "projectName": "Hand-In-2",
-    "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\Hand-In-2.csproj",
-    "outputPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\Hand-In-2\\obj\\",
+    "projectPath": "D:\\Handincik-4\\Hand-In-2\\Hand-In-2.csproj",
+    "outputPath": "D:\\Handincik-4\\Hand-In-2\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -15,8 +15,8 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
-          "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj": {
-            "projectPath": "D:\\C#\\DNP\\AuthenticationAndAuthorization\\Handincik-2\\REST-API\\REST-API.csproj"
+          "D:\\Handincik-4\\REST-API\\REST-API.csproj": {
+            "projectPath": "D:\\Handincik-4\\REST-API\\REST-API.csproj"
           }
         }
       }
@@ -33,6 +33,12 @@
         "Microsoft.AspNetCore.Blazor.HttpClient": {
           "target": "Package",
           "version": "[3.2.0-preview3.20168.3, )"
+        },
+        "Microsoft.EntityFrameworkCore.Design": {
+          "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+          "suppressParent": "All",
+          "target": "Package",
+          "version": "[3.1.10, )"
         },
         "Newtonsoft.Json": {
           "target": "Package",
@@ -57,7 +63,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Users\\Igor\\.dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
     }
   }
 }
